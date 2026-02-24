@@ -166,7 +166,7 @@ export function Hero() {
             <div className="hidden md:block w-px h-6 bg-gradient-to-b from-transparent via-cyan-500 to-transparent" />
             <div className="flex items-center gap-2 text-gray-300">
               <span className="text-xl">📍</span>
-              <span>AKITS Campus, Hyderabad</span>
+              <span>AKITS Campus, Kothagudem</span>
             </div>
           </div>
         </motion.div>

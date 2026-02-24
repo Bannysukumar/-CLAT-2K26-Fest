@@ -8,6 +8,7 @@ import { About } from '@/components/About';
 import { Events } from '@/components/Events';
 import { FamilyWall } from '@/components/FamilyWall';
 import { Gallery } from '@/components/Gallery';
+import { VideoSection } from '@/components/VideoSection';
 import { Messages } from '@/components/Messages';
 import { Credits } from '@/components/Credits';
 import { Contact } from '@/components/Contact';
@@ -57,6 +58,7 @@ export default function Home() {
         <Events />
         <FamilyWall />
         <Gallery />
+        <VideoSection />
         <Messages />
         <Credits />
         <Contact />
