@@ -587,5 +587,12 @@ export const galleryItems: GalleryItem[] = [
     category: 'behind-scenes',
     image: '/New folder (2)/abcd.jpeg',
     description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-84',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (2)/senor.jpeg',
+    description: 'A memorable moment from the ECE Fest'
   }
 ];
