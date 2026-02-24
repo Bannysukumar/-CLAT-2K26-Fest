@@ -21,63 +21,63 @@ export const people: Person[] = [
     id: 'faculty-1',
     name: 'B. Sisrisha',
     role: 'faculty',
-    designation: 'M.Tech: ES&VD | Exp: 7 Years',
+    designation: 'M.Tech: ES&VD',
     image: '/New folder/SISRISHA.jpg'
   },
   {
     id: 'faculty-2',
     name: 'B. Soumya',
     role: 'faculty',
-    designation: 'M.Tech: ES&VD | Asst. Prof | Exp: 5 Years',
+    designation: 'M.Tech: ES&VD | Asst. Prof',
     image: '/New folder/SOUMYA.jpg'
   },
   {
     id: 'faculty-3',
     name: 'K. Naga Dileep Kumar',
     role: 'faculty',
-    designation: 'M.Tech: ES | Asst. Prof | Exp: 5 Years',
+    designation: 'M.Tech: ES | Asst. Prof',
     image: '/New folder/DILEEP.jpg'
   },
   {
     id: 'faculty-4',
     name: 'A. Prasad Rao',
     role: 'faculty',
-    designation: 'M.Tech: ECE | Exp: 8 Years',
+    designation: 'M.Tech: ECE',
     image: '/New folder/SISRISHA.jpg'
   },
   {
     id: 'faculty-5',
     name: 'B. Sindhuja',
     role: 'faculty',
-    designation: 'M.Tech: ES&VD | Exp: 7 Years',
+    designation: 'M.Tech: ES&VD',
     image: '/New folder/SINDHUJA.jpg'
   },
   {
     id: 'faculty-6',
     name: 'K. Keerthan Kumar',
     role: 'faculty',
-    designation: 'M.Tech: VLSI | Exp: 1 Year',
+    designation: 'M.Tech: VLSI',
     image: '/New folder/KEERTHAN.jpg'
   },
   {
     id: 'faculty-7',
     name: 'K. Bhargavi',
     role: 'faculty',
-    designation: 'M.Tech: ES&VD | Exp: 3 Years',
+    designation: 'M.Tech: ES&VD',
     image: '/New folder/BHARGAVI.jpg'
   },
   {
     id: 'faculty-8',
     name: 'T. Srujana',
     role: 'faculty',
-    designation: 'M.Tech: VSD | Exp: 2 Years',
+    designation: 'M.Tech: VSD',
     image: '/New folder/SRUJANA.jpg'
   },
   {
     id: 'faculty-9',
     name: 'B. Navya Sri',
     role: 'faculty',
-    designation: 'M.Tech: WMC | Exp: 2 Years',
+    designation: 'M.Tech: WMC',
     image: '/New folder/NAVYA.jpg'
   },
 

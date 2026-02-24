@@ -9,6 +9,7 @@ import { Events } from '@/components/Events';
 import { FamilyWall } from '@/components/FamilyWall';
 import { Gallery } from '@/components/Gallery';
 import { VideoSection } from '@/components/VideoSection';
+import { EventCoordinators } from '@/components/EventCoordinators';
 import { Messages } from '@/components/Messages';
 import { Credits } from '@/components/Credits';
 import { Contact } from '@/components/Contact';
@@ -59,6 +60,7 @@ export default function Home() {
         <FamilyWall />
         <Gallery />
         <VideoSection />
+        <EventCoordinators />
         <Messages />
         <Credits />
         <Contact />
