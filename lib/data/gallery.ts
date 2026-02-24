@@ -504,4 +504,88 @@ export const galleryItems: GalleryItem[] = [
     image: '/images/yu7.jpeg',
     description: 'A memorable moment from the ECE Fest'
   },
+  {
+    id: 'gallery-72',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (2)/gguygyi.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-73',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (2)/guyguy.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-74',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (2)/hawgay.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-75',
+    title: 'ECE Fest Highlight',
+    category: 'performances',
+    image: '/New folder (2)/hdegfe.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-76',
+    title: 'ECE Fest Highlight',
+    category: 'performances',
+    image: '/New folder (2)/iuiy8y.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-77',
+    title: 'ECE Fest Highlight',
+    category: 'performances',
+    image: '/New folder (2)/jygyuuy.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-78',
+    title: 'ECE Fest Highlight',
+    category: 'moments',
+    image: '/New folder (2)/kjhhkj.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-79',
+    title: 'ECE Fest Highlight',
+    category: 'moments',
+    image: '/New folder (2)/uyifur.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-80',
+    title: 'ECE Fest Highlight',
+    category: 'moments',
+    image: '/New folder (2)/y88y87t87t.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-81',
+    title: 'ECE Fest Highlight',
+    category: 'behind-scenes',
+    image: '/New folder (2)/ye87fery87e.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-82',
+    title: 'ECE Fest Highlight',
+    category: 'behind-scenes',
+    image: '/New folder (2)/yruewew.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-83',
+    title: 'ECE Fest Highlight',
+    category: 'behind-scenes',
+    image: '/New folder (2)/abcd.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  }
 ];
