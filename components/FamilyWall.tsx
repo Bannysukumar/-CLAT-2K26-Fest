@@ -121,16 +121,7 @@ export function FamilyWall() {
         ))}
       </motion.div>
 
-      {/* Count info */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="text-center mt-12 text-gray-400"
-      >
-        Showing {filteredPeople.length} member{filteredPeople.length !== 1 ? 's' : ''} • Total: {people.length}
-      </motion.div>
+
     </SectionWrapper>
   );
 }
