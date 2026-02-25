@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { SectionWrapper } from '@/components/SectionWrapper';
 import Image from 'next/image';
+import { leadershipData } from '@/lib/data/leadership';
 
 export function Leadership() {
     const containerVariants = {
@@ -20,44 +21,8 @@ export function Leadership() {
         visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
     };
 
-    const leaders = [
-        {
-            name: 'Dr. D. DAYAKAR',
-            image: '/New folder (3)/principle.jpeg',
-            role: 'Principal',
-            message: 'Welcome to ÉCLAT 2K26. It is our immense pleasure to host this national level technical symposium, encouraging innovation and excellence.'
-        },
-        {
-            name: 'B. Srikanth',
-            image: '/New folder (3)/Srikanth .jpeg',
-            role: 'Management/Director',
-            message: 'Empowering students with technical skills and industrial exposure is our core mission.'
-        },
-        {
-            name: 'A. Saidaiah',
-            image: '/New folder (3)/saidai.jpeg',
-            role: 'Management/Director',
-            message: 'Innovation begins where textbooks end. We strive to provide a platform for every creative mind.'
-        },
-        {
-            name: 'B. Ramesh',
-            image: '/New folder (3)/ramesh sir 2.jpeg',
-            role: 'Management/Director',
-            message: 'Technical education is the backbone of national development. Let ÉCLAT be the spark.'
-        },
-        {
-            name: 'D. Venkateshwar Rao',
-            image: '/New folder (3)/venkateshwar.jpeg',
-            role: 'Management/Director',
-            message: 'Strive for excellence in everything you do. Success will follow naturally.'
-        },
-        {
-            name: 'Ch. Laxmi Narayana',
-            image: '/New folder (3)/laxmi narayana.jpeg',
-            role: 'Management/Director',
-            message: 'Collaboration and innovation are the keys to a better future.'
-        }
-    ];
+    // Filter out HOD (Mrs. G. Krishna Mohan) from the Management section since she's the HOD
+    const managementLeaders = leadershipData.filter(leader => leader.role !== 'Head of the Department — ECE');
 
     return (
         <SectionWrapper id="leadership" title="College Management">
@@ -68,7 +33,7 @@ export function Leadership() {
                 viewport={{ once: true }}
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mt-8 px-4"
             >
-                {leaders.map((leader, index) => (
+                {managementLeaders.map((leader, index) => (
                     <motion.div
                         key={index}
                         variants={itemVariants}

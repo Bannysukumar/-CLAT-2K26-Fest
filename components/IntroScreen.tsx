@@ -1,14 +1,27 @@
 'use client';
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { leadershipData } from '@/lib/data/leadership';
 
 interface IntroScreenProps {
   onComplete: () => void;
 }
 
 export function IntroScreen({ onComplete }: IntroScreenProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
+
+  useEffect(() => {
+    // Auto-advance through profiles every 4 seconds
+    const timer = setInterval(() => {
+      if (currentIndex < leadershipData.length - 1) {
+        setCurrentIndex(prev => prev + 1);
+      }
+    }, 4500);
+
+    return () => clearInterval(timer);
+  }, [currentIndex]);
 
   const handleEnter = () => {
     setIsExiting(true);
@@ -23,9 +36,11 @@ export function IntroScreen({ onComplete }: IntroScreenProps) {
   };
 
   const handleReplay = () => {
+    setCurrentIndex(0);
     localStorage.removeItem('eclatIntroSeen');
-    window.location.reload();
   };
+
+  const currentLeader = leadershipData[currentIndex];
 
   return (
     <motion.div
@@ -51,58 +66,98 @@ export function IntroScreen({ onComplete }: IntroScreenProps) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center gap-8">
-        {/* Golden Frame for HOD */}
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="relative w-48 h-48 md:w-64 md:h-64"
-        >
-          {/* Golden frame border */}
-          <div className="absolute inset-0 border-8 border-yellow-500 rounded-3xl shadow-2xl shadow-yellow-400/50" />
-
-          {/* Inner frame effect */}
-          <div className="absolute inset-4 border-2 border-yellow-400 rounded-2xl" />
-
-          {/* HOD Image */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-900 rounded-2xl flex items-center justify-center text-yellow-200 text-center p-1 overflow-hidden z-10">
-            <img
-              src="/New folder/hod.jpeg"
-              alt="HOD Mrs. G. Krishna Mohan"
-              className="w-full h-full object-cover rounded-xl"
-            />
-          </div>
-
-          {/* Glow effect */}
+      <div className="relative z-10 flex flex-col items-center gap-6 px-4 max-w-2xl w-full">
+        <AnimatePresence mode="wait">
           <motion.div
-            animate={{ scale: [1, 1.1, 1] }}
-            transition={{ duration: 3, repeat: Infinity }}
-            className="absolute inset-0 border-4 border-yellow-400 border-opacity-0 rounded-3xl blur-lg"
-            style={{
-              boxShadow: '0 0 30px rgba(250, 204, 21, 0.4)'
-            }}
-          />
-        </motion.div>
+            key={currentIndex}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.1 }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col items-center gap-6"
+          >
+            {/* Golden Frame for Leader */}
+            <div className="relative w-48 h-48 md:w-64 md:h-64">
+              {/* Golden frame border */}
+              <div className="absolute inset-0 border-8 border-yellow-500 rounded-3xl shadow-2xl shadow-yellow-400/50" />
 
-        {/* Text Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-center"
-        >
-          <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-200 to-yellow-400 mb-2 drop-shadow-lg">
-            KING OF ECE
-          </h1>
+              {/* Inner frame effect */}
+              <div className="absolute inset-4 border-2 border-yellow-400 rounded-2xl" />
 
-          <p className="text-xl md:text-2xl text-yellow-100 font-semibold mb-1">
-            Mrs. G. Krishna Mohan
-          </p>
-          <p className="text-lg md:text-xl text-yellow-200">
-            Head of the Department — ECE
-          </p>
-        </motion.div>
+              {/* Profile Image */}
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-900 rounded-2xl flex items-center justify-center text-yellow-200 text-center p-1 overflow-hidden z-10">
+                <img
+                  src={currentLeader.image}
+                  alt={currentLeader.name}
+                  className="w-full h-full object-cover rounded-xl"
+                />
+              </div>
+
+              {/* Glow effect */}
+              <motion.div
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute inset-0 border-4 border-yellow-400 border-opacity-0 rounded-3xl blur-lg"
+                style={{
+                  boxShadow: '0 0 30px rgba(250, 204, 21, 0.4)'
+                }}
+              />
+            </div>
+
+            {/* Text Section */}
+            <div className="text-center">
+              {currentLeader.title && (
+                <motion.h1
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-200 to-yellow-400 mb-4 drop-shadow-lg tracking-wider"
+                >
+                  {currentLeader.title}
+                </motion.h1>
+              )}
+
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-2xl md:text-3xl text-yellow-100 font-bold mb-1"
+              >
+                {currentLeader.name}
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-lg md:text-xl text-yellow-300/90 font-medium"
+              >
+                {currentLeader.role}
+              </motion.p>
+
+              {currentLeader.message && (
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="mt-4 text-gray-300 italic max-w-md text-sm md:text-base leading-relaxed"
+                >
+                  "{currentLeader.message}"
+                </motion.p>
+              )}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Progress Dots */}
+        <div className="flex gap-2 mt-4">
+          {leadershipData.map((_, idx) => (
+            <div
+              key={idx}
+              className={`h-1.5 rounded-full transition-all duration-500 ${idx === currentIndex ? 'w-8 bg-yellow-500' : 'w-2 bg-yellow-500/20'
+                }`}
+            />
+          ))}
+        </div>
 
         {/* Enter Button */}
         <motion.button
