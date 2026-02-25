@@ -6,6 +6,7 @@ import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { About } from '@/components/About';
 import { Events } from '@/components/Events';
+import { Leadership } from '@/components/Leadership';
 import { FamilyWall } from '@/components/FamilyWall';
 import { Gallery } from '@/components/Gallery';
 import { VideoSection } from '@/components/VideoSection';
@@ -57,6 +58,7 @@ export default function Home() {
         <Hero />
         <About />
         <Events />
+        <Leadership />
         <FamilyWall />
         <Gallery />
         <VideoSection />

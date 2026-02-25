@@ -80,6 +80,13 @@ export const people: Person[] = [
     designation: 'M.Tech: WMC',
     image: '/New folder/NAVYA.jpg'
   },
+  {
+    id: 'faculty-10',
+    name: 'Y. Nirmala',
+    role: 'faculty',
+    designation: 'Faculty',
+    image: '/New folder (3)/nirmala.jpeg'
+  },
 
   // Convenors
   /*

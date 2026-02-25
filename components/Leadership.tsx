@@ -1,0 +1,110 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { SectionWrapper } from '@/components/SectionWrapper';
+import Image from 'next/image';
+
+export function Leadership() {
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+            },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, scale: 0.9 },
+        visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+    };
+
+    const leaders = [
+        {
+            name: 'Dr. D. DAYAKAR',
+            image: '/New folder (3)/principle.jpeg',
+            role: 'Principal',
+            message: 'Welcome to ÉCLAT 2K26. It is our immense pleasure to host this national level technical symposium, encouraging innovation and excellence.'
+        },
+        {
+            name: 'B. Srikanth',
+            image: '/New folder (3)/Srikanth .jpeg',
+            role: 'Management/Director',
+            message: 'Empowering students with technical skills and industrial exposure is our core mission.'
+        },
+        {
+            name: 'A. Saidaiah',
+            image: '/New folder (3)/saidai.jpeg',
+            role: 'Management/Director',
+            message: 'Innovation begins where textbooks end. We strive to provide a platform for every creative mind.'
+        },
+        {
+            name: 'B. Ramesh',
+            image: '/New folder (3)/ramesh sir 2.jpeg',
+            role: 'Management/Director',
+            message: 'Technical education is the backbone of national development. Let ÉCLAT be the spark.'
+        },
+        {
+            name: 'D. Venkateshwar Rao',
+            image: '/New folder (3)/venkateshwar.jpeg',
+            role: 'Management/Director',
+            message: 'Strive for excellence in everything you do. Success will follow naturally.'
+        },
+        {
+            name: 'Ch. Laxmi Narayana',
+            image: '/New folder (3)/laxmi narayana.jpeg',
+            role: 'Management/Director',
+            message: 'Collaboration and innovation are the keys to a better future.'
+        }
+    ];
+
+    return (
+        <SectionWrapper id="leadership" title="College Management">
+            <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mt-8 px-4"
+            >
+                {leaders.map((leader, index) => (
+                    <motion.div
+                        key={index}
+                        variants={itemVariants}
+                        className="group relative w-full"
+                    >
+                        <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-500 to-amber-600 rounded-3xl blur opacity-30 group-hover:opacity-100 transition duration-500" />
+                        <div className="relative glass p-8 rounded-3xl h-full flex flex-col items-center text-center">
+                            {/* Image Container with Golden accents for Management */}
+                            <div className="relative w-48 h-48 mb-6 rounded-full overflow-hidden border-4 border-yellow-500/30 group-hover:border-yellow-400 transition-colors shadow-2xl">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
+                                <Image
+                                    src={leader.image}
+                                    alt={leader.name}
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    sizes="(max-width: 768px) 100vw, 300px"
+                                />
+                            </div>
+
+                            {/* Info Container */}
+                            <div className="z-20">
+                                <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-500 mb-2 group-hover:text-yellow-400 transition-colors">
+                                    {leader.name}
+                                </h3>
+                                <p className="text-yellow-400/80 font-medium tracking-wide uppercase text-xs mb-4">
+                                    {leader.role}
+                                </p>
+                                <div className="w-12 h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent mx-auto mb-4 opacity-50" />
+                                <p className="text-gray-300 italic leading-relaxed text-sm">
+                                    "{leader.message}"
+                                </p>
+                            </div>
+                        </div>
+                    </motion.div>
+                ))}
+            </motion.div>
+        </SectionWrapper>
+    );
+}

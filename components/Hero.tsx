@@ -115,7 +115,7 @@ export function Hero() {
             <div className="relative glass overflow-hidden">
               <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-gray-400 relative">
                 <Image
-                  src="/images/brocher.png"
+                  src="/New folder (3)/brocher2.jpeg"
                   alt="ÉCLAT 2K26 Fest Poster"
                   fill
                   className="object-cover"

@@ -594,5 +594,286 @@ export const galleryItems: GalleryItem[] = [
     category: 'events',
     image: '/New folder (2)/senor.jpeg',
     description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-85',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp Image 2026-02-25 at 6.32.50 AM.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-86',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp Image 2026-02-25 at 6.32.51 AM.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-87',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp Image 2026-02-25 at 6.32.53 fgru.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-88',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp Image 2026-02-25 dgf.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-89',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp Image 2026-02-2rbh.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-90',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp Image 2026-02jnj.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-91',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp Image 2026-vgf.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-92',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp Image 202pduhyrui.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-93',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp Image 20iiuertie.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-94',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp Image 2bdevfhur.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-95',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp Image 2rhgiuerh.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-96',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp Image jfhurgu.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-97',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp Image jhgufg.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-98',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp Imagghierugiu.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-99',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp Imaghhgfy.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-100',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp Imagjvhdfuhgiug.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-101',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp Imahfiuerhug.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-102',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp Imakdhgiuer.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-103',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp Imakdjgiuergh.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-104',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp Imfjhefuer.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-105',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/WhatsApp rjhgierg.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+
+  {
+    id: 'gallery-107',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/efvjerh.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-108',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/eufwey.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-109',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/gfyreu.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-110',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/hegfuy.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-111',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/hgfywe.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-112',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/hgiutr.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-113',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/hod2.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-114',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/iewhyfuye.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-115',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/iihi.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-116',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/ramesh.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-117',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/riureger.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-118',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/ryfuer.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-119',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/ryr.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-120',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/venkateshwar rao.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-121',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/yefyerf.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-122',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/yefyewf.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-123',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/ygfeuygwyr.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-124',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/ygftwye.jpeg',
+    description: 'A memorable moment from the ECE Fest'
+  },
+  {
+    id: 'gallery-125',
+    title: 'ECE Fest Highlight',
+    category: 'events',
+    image: '/New folder (3)/yrugyrey.jpeg',
+    description: 'A memorable moment from the ECE Fest'
   }
 ];
