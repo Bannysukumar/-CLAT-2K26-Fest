@@ -4,8 +4,9 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-function useCountdown(targetDate: Date) {
+function useCountdown(startDate: Date, endDate: Date) {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [status, setStatus] = useState<'upcoming' | 'ongoing' | 'completed'>('upcoming');
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -13,28 +14,39 @@ function useCountdown(targetDate: Date) {
 
     const calculate = () => {
       const now = new Date().getTime();
-      const distance = targetDate.getTime() - now;
-      if (distance <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-      return {
-        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((distance % (1000 * 60)) / 1000),
-      };
+      const distToStart = startDate.getTime() - now;
+      const distToEnd = endDate.getTime() - now;
+
+      if (distToStart > 0) {
+        setStatus('upcoming');
+        return {
+          days: Math.floor(distToStart / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((distToStart % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((distToStart % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((distToStart % (1000 * 60)) / 1000),
+        };
+      } else if (distToEnd > 0) {
+        setStatus('ongoing');
+        return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+      } else {
+        setStatus('completed');
+        return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+      }
     };
 
     setTimeLeft(calculate());
     const timer = setInterval(() => setTimeLeft(calculate()), 1000);
     return () => clearInterval(timer);
-  }, [targetDate]);
+  }, [startDate, endDate]);
 
-  return { timeLeft, isClient };
+  return { timeLeft, status, isClient };
 }
 
-const TARGET_DATE = new Date('2026-02-26T00:00:00');
+const START_DATE = new Date('2026-02-26T00:00:00');
+const END_DATE = new Date('2026-02-28T00:00:00'); // Completed after the 27th (starting 28th)
 
 export function Hero() {
-  const { timeLeft, isClient } = useCountdown(TARGET_DATE);
+  const { timeLeft, status, isClient } = useCountdown(START_DATE, END_DATE);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -202,54 +214,90 @@ export function Hero() {
           </motion.button>
         </motion.div>
 
-        {/* Countdown Timer */}
+        {/* Status Indicator / Countdown Timer */}
         <motion.div variants={itemVariants} className="mb-12">
-          <div className="flex flex-col items-center">
-            <h3 className="text-xl md:text-2xl font-bold text-cyan-400 mb-6 neon-text-cyan">Event Starts In</h3>
+          {!isClient ? (
+            <div className="h-32" /> // Placeholder to prevent jump
+          ) : status === 'upcoming' ? (
+            <div className="flex flex-col items-center">
+              <h3 className="text-xl md:text-2xl font-bold text-cyan-400 mb-6 neon-text-cyan">Event Starts In</h3>
 
-            <div className="flex gap-4 md:gap-8 justify-center">
-              {/* Days */}
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 md:w-24 md:h-24 glass rounded-xl flex items-center justify-center mb-2 border border-cyan-500/30 group hover:border-cyan-400 transition-colors">
-                  <span className="text-2xl md:text-4xl font-black text-white group-hover:neon-text-cyan">
-                    {isClient ? String(timeLeft.days).padStart(2, '0') : '00'}
-                  </span>
+              <div className="flex gap-4 md:gap-8 justify-center">
+                {/* Days */}
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 md:w-24 md:h-24 glass rounded-xl flex items-center justify-center mb-2 border border-cyan-500/30 group hover:border-cyan-400 transition-colors">
+                    <span className="text-2xl md:text-4xl font-black text-white group-hover:neon-text-cyan">
+                      {String(timeLeft.days).padStart(2, '0')}
+                    </span>
+                  </div>
+                  <span className="text-xs md:text-sm text-gray-400 font-semibold uppercase tracking-wider">Days</span>
                 </div>
-                <span className="text-xs md:text-sm text-gray-400 font-semibold uppercase tracking-wider">Days</span>
-              </div>
 
-              {/* Hours */}
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 md:w-24 md:h-24 glass rounded-xl flex items-center justify-center mb-2 border border-purple-500/30 group hover:border-purple-400 transition-colors">
-                  <span className="text-2xl md:text-4xl font-black text-white group-hover:neon-text-purple">
-                    {isClient ? String(timeLeft.hours).padStart(2, '0') : '00'}
-                  </span>
+                {/* Hours */}
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 md:w-24 md:h-24 glass rounded-xl flex items-center justify-center mb-2 border border-purple-500/30 group hover:border-purple-400 transition-colors">
+                    <span className="text-2xl md:text-4xl font-black text-white group-hover:neon-text-purple">
+                      {String(timeLeft.hours).padStart(2, '0')}
+                    </span>
+                  </div>
+                  <span className="text-xs md:text-sm text-gray-400 font-semibold uppercase tracking-wider">Hours</span>
                 </div>
-                <span className="text-xs md:text-sm text-gray-400 font-semibold uppercase tracking-wider">Hours</span>
-              </div>
 
-              {/* Minutes */}
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 md:w-24 md:h-24 glass rounded-xl flex items-center justify-center mb-2 border border-pink-500/30 group hover:border-pink-400 transition-colors">
-                  <span className="text-2xl md:text-4xl font-black text-white group-hover:neon-text-pink">
-                    {isClient ? String(timeLeft.minutes).padStart(2, '0') : '00'}
-                  </span>
+                {/* Minutes */}
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 md:w-24 md:h-24 glass rounded-xl flex items-center justify-center mb-2 border border-pink-500/30 group hover:border-pink-400 transition-colors">
+                    <span className="text-2xl md:text-4xl font-black text-white group-hover:neon-text-pink">
+                      {String(timeLeft.minutes).padStart(2, '0')}
+                    </span>
+                  </div>
+                  <span className="text-xs md:text-sm text-gray-400 font-semibold uppercase tracking-wider">Mins</span>
                 </div>
-                <span className="text-xs md:text-sm text-gray-400 font-semibold uppercase tracking-wider">Mins</span>
-              </div>
 
-              {/* Seconds */}
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 md:w-24 md:h-24 glass rounded-xl flex items-center justify-center mb-2 border border-blue-500/30 group hover:border-blue-400 transition-colors">
-                  <span className="text-2xl md:text-4xl font-black text-white group-hover:neon-text-blue">
-                    {isClient ? String(timeLeft.seconds).padStart(2, '0') : '00'}
-                  </span>
+                {/* Seconds */}
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 md:w-24 md:h-24 glass rounded-xl flex items-center justify-center mb-2 border border-blue-500/30 group hover:border-blue-400 transition-colors">
+                    <span className="text-2xl md:text-4xl font-black text-white group-hover:neon-text-blue">
+                      {String(timeLeft.seconds).padStart(2, '0')}
+                    </span>
+                  </div>
+                  <span className="text-xs md:text-sm text-gray-400 font-semibold uppercase tracking-wider">Secs</span>
                 </div>
-                <span className="text-xs md:text-sm text-gray-400 font-semibold uppercase tracking-wider">Secs</span>
               </div>
             </div>
-
-          </div>
+          ) : status === 'ongoing' ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="flex flex-col items-center"
+            >
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full blur-xl opacity-25 group-hover:opacity-50 animate-pulse transition duration-1000" />
+                <div className="relative glass px-12 py-6 rounded-full border-2 border-cyan-500/50 shadow-[0_0_30px_rgba(34,211,238,0.3)]">
+                  <h3 className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-purple-300 animate-gradient-x tracking-tighter">
+                    EVENT STARTED ⚡
+                  </h3>
+                </div>
+              </div>
+              <p className="mt-4 text-cyan-400 font-bold tracking-widest uppercase text-sm animate-pulse">
+                Join the celebration of innovation
+              </p>
+            </motion.div>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex flex-col items-center"
+            >
+              <div className="glass px-10 py-5 rounded-3xl border-2 border-green-500/30 bg-green-500/5">
+                <h3 className="text-2xl md:text-4xl font-bold text-green-400 drop-shadow-[0_0_10px_rgba(74,222,128,0.4)]">
+                  Event Successfully Completed ✨
+                </h3>
+              </div>
+              <p className="mt-4 text-gray-400 font-medium">
+                Thank you all for making ÉCLAT 2K26 a grand success!
+              </p>
+            </motion.div>
+          )}
         </motion.div>
 
         {/* Scroll indicator */}
