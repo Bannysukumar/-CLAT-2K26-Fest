@@ -10,6 +10,7 @@ import { Leadership } from '@/components/Leadership';
 import { FamilyWall } from '@/components/FamilyWall';
 import { Gallery } from '@/components/Gallery';
 import { VideoSection } from '@/components/VideoSection';
+import { EventGallery } from '@/components/EventGallery';
 import { EventCoordinators } from '@/components/EventCoordinators';
 import { Messages } from '@/components/Messages';
 import { Credits } from '@/components/Credits';
@@ -62,6 +63,7 @@ export default function Home() {
         <FamilyWall />
         <Gallery />
         <VideoSection />
+        <EventGallery />
         <EventCoordinators />
         <Messages />
         <Credits />
