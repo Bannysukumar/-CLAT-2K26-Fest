@@ -85,9 +85,9 @@ export function MusicController({ onMusicStart }: MusicControllerProps) {
         crossOrigin="anonymous"
       >
         {/* Using a silent MP3 data URL as fallback */}
-        <source 
-          src="data:audio/mpeg;base64,//NExAAAAANIAAAAAExBTUUzLjk4LjIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/+NExBsAAANIAAAAAExBTUUzLjk4LjIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//NExA8AAANIAAAAAExBTUUzLjk4LjIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/+NExAMAAANIAAAAAExBTUUzLjk4LjI=" 
-          type="audio/mpeg" 
+        <source
+          src="data:audio/mpeg;base64,//NExAAAAANIAAAAAExBTUUzLjk4LjIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/+NExBsAAANIAAAAAExBTUUzLjk4LjIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//NExA8AAANIAAAAAExBTUUzLjk4LjIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/+NExAMAAANIAAAAAExBTUUzLjk4LjI="
+          type="audio/mpeg"
         />
       </audio>
 
@@ -96,6 +96,7 @@ export function MusicController({ onMusicStart }: MusicControllerProps) {
         onClick={toggleMusic}
         className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 text-white hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-slate-950"
         aria-label={isPlaying ? 'Pause music' : 'Play music'}
+        suppressHydrationWarning
       >
         {isPlaying ? <Music2 size={24} /> : <Music size={24} />}
       </button>

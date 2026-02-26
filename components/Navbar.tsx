@@ -68,11 +68,11 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-white p-2 hover:bg-slate-800 rounded-lg transition-colors"
             aria-label="Toggle menu"
+            suppressHydrationWarning
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

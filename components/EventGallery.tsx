@@ -6,17 +6,27 @@ import { SectionWrapper } from './SectionWrapper';
 import Image from 'next/image';
 
 const eventImages = [
-    { id: 1, src: '/New folder (4)/euwyf87wyeyf.jpeg', alt: 'ÉCLAT 2K26 Moment 1' },
-    { id: 2, src: '/New folder (4)/fgeryf.jpeg', alt: 'ÉCLAT 2K26 Moment 2' },
-    { id: 3, src: '/New folder (4)/gfuygeuf.jpeg', alt: 'ÉCLAT 2K26 Moment 3' },
-    { id: 4, src: '/New folder (4)/gfyuuy.jpeg', alt: 'ÉCLAT 2K26 Moment 4' },
-    { id: 5, src: '/New folder (4)/gufgeuy.jpeg', alt: 'ÉCLAT 2K26 Moment 5' },
-    { id: 6, src: '/New folder (4)/hdgff.jpeg', alt: 'ÉCLAT 2K26 Moment 6' },
-    { id: 7, src: '/New folder (4)/hfguyege.jpeg', alt: 'ÉCLAT 2K26 Moment 7' },
-    { id: 8, src: '/New folder (4)/hgvuhgfygu.jpeg', alt: 'ÉCLAT 2K26 Moment 8' },
-    { id: 9, src: '/New folder (4)/jhfugu.jpeg', alt: 'ÉCLAT 2K26 Moment 9' },
-    { id: 10, src: '/New folder (4)/jhggryeerf.jpeg', alt: 'ÉCLAT 2K26 Moment 10' },
-    { id: 11, src: '/New folder (4)/uefyerfuy7e.jpeg', alt: 'ÉCLAT 2K26 Moment 11' },
+  { id: 1, src: '/New folder (4)/euwyf87wyeyf.jpeg', alt: 'ÉCLAT 2K26 Moment 1' },
+  { id: 2, src: '/New folder (4)/eyeryuwe.jpeg', alt: 'ÉCLAT 2K26 Moment 2' },
+  { id: 3, src: '/New folder (4)/fgeryf.jpeg', alt: 'ÉCLAT 2K26 Moment 3' },
+  { id: 4, src: '/New folder (4)/gfuygeuf.jpeg', alt: 'ÉCLAT 2K26 Moment 4' },
+  { id: 5, src: '/New folder (4)/gfyuuy.jpeg', alt: 'ÉCLAT 2K26 Moment 5' },
+  { id: 6, src: '/New folder (4)/gufgeuy.jpeg', alt: 'ÉCLAT 2K26 Moment 6' },
+  { id: 7, src: '/New folder (4)/hdgff.jpeg', alt: 'ÉCLAT 2K26 Moment 7' },
+  { id: 8, src: '/New folder (4)/hfguyege.jpeg', alt: 'ÉCLAT 2K26 Moment 8' },
+  { id: 9, src: '/New folder (4)/hgvuhgfygu.jpeg', alt: 'ÉCLAT 2K26 Moment 9' },
+  { id: 10, src: '/New folder (4)/hrgyuer.jpeg', alt: 'ÉCLAT 2K26 Moment 10' },
+  { id: 11, src: '/New folder (4)/jdfhvuh.jpeg', alt: 'ÉCLAT 2K26 Moment 11' },
+  { id: 12, src: '/New folder (4)/jffnvnj.jpeg', alt: 'ÉCLAT 2K26 Moment 12' },
+  { id: 13, src: '/New folder (4)/jfijdfhiuf.jpeg', alt: 'ÉCLAT 2K26 Moment 13' },
+  { id: 14, src: '/New folder (4)/jfiufre.jpeg', alt: 'ÉCLAT 2K26 Moment 14' },
+  { id: 15, src: '/New folder (4)/jghierjh.jpeg', alt: 'ÉCLAT 2K26 Moment 15' },
+  { id: 16, src: '/New folder (4)/jhfugu.jpeg', alt: 'ÉCLAT 2K26 Moment 16' },
+  { id: 17, src: '/New folder (4)/jhggryeerf.jpeg', alt: 'ÉCLAT 2K26 Moment 17' },
+  { id: 18, src: '/New folder (4)/jofijdif.jpeg', alt: 'ÉCLAT 2K26 Moment 18' },
+  { id: 19, src: '/New folder (4)/uefyerfuy7e.jpeg', alt: 'ÉCLAT 2K26 Moment 19' },
+  { id: 20, src: '/New folder (4)/uhgutrgjfhiugb.jpeg', alt: 'ÉCLAT 2K26 Moment 20' },
+  { id: 21, src: '/New folder (4)/uregyuey.jpeg', alt: 'ÉCLAT 2K26 Moment 21' },
 ];
 
 export function EventGallery() {

@@ -11,6 +11,7 @@ import { FamilyWall } from '@/components/FamilyWall';
 import { Gallery } from '@/components/Gallery';
 import { VideoSection } from '@/components/VideoSection';
 import { EventGallery } from '@/components/EventGallery';
+import { EventGames } from '@/components/EventGames';
 import { EventCoordinators } from '@/components/EventCoordinators';
 import { Messages } from '@/components/Messages';
 import { Credits } from '@/components/Credits';
@@ -64,6 +65,7 @@ export default function Home() {
         <Gallery />
         <VideoSection />
         <EventGallery />
+        <EventGames />
         <EventCoordinators />
         <Messages />
         <Credits />
