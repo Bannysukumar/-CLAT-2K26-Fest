@@ -14,12 +14,12 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    content: 'eclat@akits.edu.in'
+    content: 'akitsece4@gmail.com'
   },
   {
     icon: Phone,
     title: 'Phone',
-    content: '+91 (40) 2302-1234'
+    content: '+919515092858'
   }
 ];
 

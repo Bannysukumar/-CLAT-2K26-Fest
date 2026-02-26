@@ -57,7 +57,7 @@ export const leadershipData: Leader[] = [
     },
     {
         name: 'M. Lakpathi',
-        image: '/New folder (3)/M. Lakpathi.jpg',
+        image: '/New folder (3)/M. Lakpathi.jpeg',
         role: 'Dean of Welfare',
         title: 'DEAN',
         category: 'Deans'
