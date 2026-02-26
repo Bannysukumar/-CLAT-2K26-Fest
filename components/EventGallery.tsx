@@ -20,10 +20,6 @@ const eventImages = [
 ];
 
 export function EventGallery() {
-    const [isExpanded, setIsExpanded] = useState(false);
-    const INITIAL_COUNT = 8;
-    const visibleImages = isExpanded ? eventImages : eventImages.slice(0, INITIAL_COUNT);
-
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -54,7 +50,7 @@ export function EventGallery() {
                     viewport={{ once: true }}
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
                 >
-                    {visibleImages.map((image) => (
+                    {eventImages.map((image) => (
                         <motion.div
                             key={image.id}
                             variants={itemVariants}
@@ -75,33 +71,6 @@ export function EventGallery() {
                         </motion.div>
                     ))}
                 </motion.div>
-
-                {eventImages.length > INITIAL_COUNT && (
-                    <div className="flex justify-center mt-12">
-                        <motion.button
-                            onClick={() => setIsExpanded(!isExpanded)}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-bold rounded-full shadow-lg shadow-cyan-500/25 hover:shadow-purple-500/40 transition-all duration-300 flex items-center gap-2 group"
-                        >
-                            {isExpanded ? (
-                                <>
-                                    Show Less
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transform group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-                                    </svg>
-                                </>
-                            ) : (
-                                <>
-                                    Show More
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transform group-hover:translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                </>
-                            )}
-                        </motion.button>
-                    </div>
-                )}
             </div>
         </SectionWrapper>
     );
